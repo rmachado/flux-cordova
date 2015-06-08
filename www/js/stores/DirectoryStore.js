@@ -30,7 +30,7 @@ var _employees = [
 
 var DirectoryStore = assign({}, {
 
-  var findById : function (id) {
+  findById : function (id) {
       var deferred = $.Deferred();
       var employee = null;
       var l = _employees.length;

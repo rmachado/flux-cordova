@@ -1,12 +1,14 @@
 var React = require('react');
 var Header = require('./Header');
+var Store = require('../stores/DirectoryStore');
 
 var EmployeePage = React.createClass({
     getInitialState: function() {
         return {employee: {}};
     },
     componentDidMount: function() {
-        this.props.service.findById(this.props.employeeId).done(function(result) {
+        var employeeId = this.props.params.id;
+        Store.findById(employeeId).done(function(result) {
             this.setState({employee: result});
         }.bind(this));
     },
